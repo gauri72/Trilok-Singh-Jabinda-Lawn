@@ -1,5 +1,5 @@
 import React from "react"
-import { FaHeart, FaUsers, FaBriefcase, FaBirthdayCake, FaGraduationCap, FaMusic, FaCamera, FaUtensils, FaLeaf } from "react-icons/fa"
+import { FaHeart, FaUsers, FaBriefcase, FaBirthdayCake, FaGraduationCap, FaMusic, FaCamera, FaUtensils } from "react-icons/fa"
 import "../styles/services-section.css"
 
 export default function ServicesSection() {
