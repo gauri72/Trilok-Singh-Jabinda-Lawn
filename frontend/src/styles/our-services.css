@@ -34,19 +34,21 @@
 .services-label {
   display: block;
   font-size: 1rem;
-  color: #2d3748;
+  color: #ffffff;
   font-weight: 600;
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .services-title {
   font-size: 2.8rem;
   font-weight: 800;
-  color: #2d3748;
+  color: #ffffff;
   margin: 0;
   line-height: 1.2;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 /* Services Grid */
