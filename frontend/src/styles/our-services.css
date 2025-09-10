@@ -70,15 +70,17 @@
 
 .service-card {
   background: white;
-  border-radius: 16px;
-  padding: 40px 30px;
+  border-radius: 20px 20px 0 0;
+  padding: 40px 20px;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-  height: 280px;
+  height: 400px;
+  width: 200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -241,8 +243,9 @@
   }
   
   .service-card {
-    padding: 30px 20px;
-    height: 260px;
+    padding: 30px 15px;
+    height: 380px;
+    width: 180px;
   }
   
   .service-icon {
@@ -276,9 +279,10 @@
   }
   
   .service-card {
-    padding: 25px 20px;
+    padding: 25px 15px;
     height: auto;
-    min-height: 240px;
+    min-height: 350px;
+    width: 250px;
   }
   
   .service-icon {
@@ -315,8 +319,9 @@
   }
   
   .service-card {
-    padding: 20px 15px;
-    min-height: 220px;
+    padding: 20px 12px;
+    min-height: 320px;
+    width: 200px;
   }
   
   .service-icon {
