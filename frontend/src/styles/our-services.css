@@ -80,7 +80,7 @@
 
 .service-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 40px 30px;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -154,26 +154,26 @@
 }
 
 .nav-arrow {
-  width: 60px;
-  height: 60px;
-  background: #8bc34a;
-  border: 3px solid #689f38;
-  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+  background: #689f38;
+  border: 2px solid #689f38;
+  border-radius: 50%;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+  box-shadow: 0 4px 15px rgba(104, 159, 56, 0.3);
 }
 
 .nav-arrow:hover {
   background: #a5d6a7;
-  border-color: #8bc34a;
+  border-color: #689f38;
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+  box-shadow: 0 8px 25px rgba(104, 159, 56, 0.4);
 }
 
 .nav-arrow:active {
@@ -302,9 +302,9 @@
   }
   
   .nav-arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
   
   .scroll-to-top {
