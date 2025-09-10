@@ -8,12 +8,16 @@ import {
   FaMusic,
   FaArrowLeft,
   FaArrowRight,
-  FaChevronUp
+  FaChevronUp,
+  FaUtensils,
+  FaCalendarAlt,
+  FaCamera,
+  FaGift
 } from 'react-icons/fa'
 import '../styles/our-services.css'
 
 export default function OurServices() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
 
   const services = [
@@ -52,22 +56,47 @@ export default function OurServices() {
       icon: FaMusic,
       title: "Cultural Events",
       description: "Host festivals, concerts, and cultural celebrations in our venue."
+    },
+    {
+      id: 7,
+      icon: FaUtensils,
+      title: "Catering Events",
+      description: "Delicious food and beverage services for all your special occasions."
+    },
+    {
+      id: 8,
+      icon: FaCalendarAlt,
+      title: "Anniversaries",
+      description: "Celebrate milestones and special anniversaries in our beautiful venue."
+    },
+    {
+      id: 9,
+      icon: FaCamera,
+      title: "Photo Shoots",
+      description: "Perfect backdrop for professional photography and videography sessions."
+    },
+    {
+      id: 10,
+      icon: FaGift,
+      title: "Special Occasions",
+      description: "Any special event that deserves a beautiful and memorable setting."
     }
   ]
 
-  const cardsPerView = 3
-  const totalSlides = Math.ceil(services.length / cardsPerView)
+  const cardsPerView = 4
+  const totalServices = services.length
+  const maxIndex = totalServices - cardsPerView
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides)
+    setCurrentIndex((prev) => prev < maxIndex ? prev + 1 : 0)
   }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
+    setCurrentIndex((prev) => prev > 0 ? prev - 1 : maxIndex)
   }
 
   const scrollToTop = () => {
@@ -75,8 +104,7 @@ export default function OurServices() {
   }
 
   const getVisibleServices = () => {
-    const start = currentSlide * cardsPerView
-    return services.slice(start, start + cardsPerView)
+    return services.slice(currentIndex, currentIndex + cardsPerView)
   }
 
   return (
@@ -110,6 +138,9 @@ export default function OurServices() {
           >
             <FaArrowLeft />
           </button>
+          <span className="slide-indicator">
+            {currentIndex + 1}-{Math.min(currentIndex + cardsPerView, totalServices)} of {totalServices}
+          </span>
           <button 
             className="nav-arrow next" 
             onClick={nextSlide}
