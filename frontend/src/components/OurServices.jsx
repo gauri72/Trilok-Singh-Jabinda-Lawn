@@ -19,6 +19,7 @@ import '../styles/our-services.css'
 export default function OurServices() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   const services = [
     {
@@ -92,11 +93,17 @@ export default function OurServices() {
   }, [])
 
   const nextSlide = () => {
+    if (isAnimating) return
+    setIsAnimating(true)
     setCurrentIndex((prev) => prev < maxIndex ? prev + 1 : 0)
+    setTimeout(() => setIsAnimating(false), 500)
   }
 
   const prevSlide = () => {
+    if (isAnimating) return
+    setIsAnimating(true)
     setCurrentIndex((prev) => prev > 0 ? prev - 1 : maxIndex)
+    setTimeout(() => setIsAnimating(false), 500)
   }
 
   const scrollToTop = () => {
@@ -117,9 +124,13 @@ export default function OurServices() {
         </div>
 
         {/* Services Grid */}
-        <div className={`services-grid ${isVisible ? 'animate-in' : ''}`}>
-          {getVisibleServices().map((service) => (
-            <div key={service.id} className="service-card">
+        <div className={`services-grid ${isVisible ? 'animate-in' : ''} ${isAnimating ? 'animating' : ''}`}>
+          {getVisibleServices().map((service, index) => (
+            <div 
+              key={service.id} 
+              className={`service-card ${isAnimating ? 'card-sliding' : ''}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <div className="service-icon">
                 <service.icon />
               </div>
@@ -134,16 +145,15 @@ export default function OurServices() {
           <button 
             className="nav-arrow prev" 
             onClick={prevSlide}
+            disabled={isAnimating}
             aria-label="Previous services"
           >
             <FaArrowLeft />
           </button>
-          <span className="slide-indicator">
-            {currentIndex + 1}-{Math.min(currentIndex + cardsPerView, totalServices)} of {totalServices}
-          </span>
           <button 
             className="nav-arrow next" 
             onClick={nextSlide}
+            disabled={isAnimating}
             aria-label="Next services"
           >
             <FaArrowRight />
