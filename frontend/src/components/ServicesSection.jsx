@@ -1,5 +1,5 @@
 import React from "react"
-import { FaHeart, FaUsers, FaBriefcase, FaBirthdayCake, FaGraduationCap, FaMusic, FaCamera, FaUtensils } from "react-icons/fa"
+import { FaHeart, FaUsers, FaBriefcase, FaBirthdayCake, FaGraduationCap, FaMusic, FaCamera, FaUtensils, FaLeaf } from "react-icons/fa"
 import "../styles/services-section.css"
 
 export default function ServicesSection() {
@@ -9,7 +9,6 @@ export default function ServicesSection() {
       title: "Weddings",
       description: "Create your perfect wedding day in our beautiful outdoor setting with elegant decorations and romantic ambiance.",
       icon: FaHeart,
-      image: "/images/services/wedding.jpg",
       features: ["Outdoor Ceremony", "Reception Space", "Photography Spots", "Catering Setup"]
     },
     {
@@ -17,7 +16,6 @@ export default function ServicesSection() {
       title: "Receptions",
       description: "Host memorable receptions with our spacious lawn area perfect for large gatherings and celebrations.",
       icon: FaUsers,
-      image: "/images/services/reception.jpg",
       features: ["Large Capacity", "Dance Floor", "Lighting Setup", "Sound System"]
     },
     {
@@ -25,7 +23,6 @@ export default function ServicesSection() {
       title: "Corporate Events",
       description: "Professional business events, conferences, and team building activities in a serene outdoor environment.",
       icon: FaBriefcase,
-      image: "/images/services/corporate.jpg",
       features: ["Conference Setup", "AV Equipment", "Networking Space", "Catering Options"]
     },
     {
@@ -33,7 +30,6 @@ export default function ServicesSection() {
       title: "Birthday Parties",
       description: "Celebrate special birthdays with our festive party setup and entertainment facilities for all ages.",
       icon: FaBirthdayCake,
-      image: "/images/services/birthday.jpg",
       features: ["Party Decorations", "Entertainment", "Food & Drinks", "Photo Booth"]
     },
     {
@@ -41,7 +37,6 @@ export default function ServicesSection() {
       title: "Graduation Ceremonies",
       description: "Honor academic achievements with our dignified outdoor ceremony space perfect for graduation celebrations.",
       icon: FaGraduationCap,
-      image: "/images/services/graduation.jpg",
       features: ["Ceremony Setup", "Stage Area", "Seating Arrangement", "Photography"]
     },
     {
@@ -49,25 +44,7 @@ export default function ServicesSection() {
       title: "Music Concerts",
       description: "Host live music events and concerts with our excellent acoustics and spacious outdoor venue.",
       icon: FaMusic,
-      image: "/images/services/concert.jpg",
       features: ["Stage Setup", "Sound System", "Lighting", "Seating Options"]
-    }
-  ]
-
-  const specialOffers = [
-    {
-      title: "Wedding Package Deal",
-      description: "Complete wedding package with decoration, catering & photography",
-      discount: "25% OFF",
-      icon: FaCamera,
-      image: "/images/offers/wedding-package.jpg"
-    },
-    {
-      title: "Corporate Event Special",
-      description: "Professional setup for business meetings and conferences",
-      discount: "30% OFF",
-      icon: FaUtensils,
-      image: "/images/offers/corporate-special.jpg"
     }
   ]
 
@@ -108,11 +85,8 @@ export default function ServicesSection() {
                 // Regular service cards
                 <div className="service-content">
                   <div className="service-image">
-                    <img src={service.image} alt={service.title} />
-                    <div className="service-overlay">
-                      <div className="service-icon">
-                        <service.icon />
-                      </div>
+                    <div className="service-icon-placeholder">
+                      <service.icon />
                     </div>
                   </div>
                   <h3 className="service-title">{service.title}</h3>
@@ -126,28 +100,6 @@ export default function ServicesSection() {
               )}
             </div>
           ))}
-        </div>
-
-        {/* Special Offers */}
-        <div className="offers-section">
-          <h3 className="offers-title">Special Offers</h3>
-          <div className="offers-grid">
-            {specialOffers.map((offer, index) => (
-              <div key={index} className="offer-card">
-                <div className="offer-image">
-                  <img src={offer.image} alt={offer.title} />
-                  <div className="offer-discount">{offer.discount}</div>
-                </div>
-                <div className="offer-content">
-                  <div className="offer-icon">
-                    <offer.icon />
-                  </div>
-                  <h4 className="offer-title">{offer.title}</h4>
-                  <p className="offer-desc">{offer.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Contact Card */}
