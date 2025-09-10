@@ -187,8 +187,8 @@
 .nav-arrow {
   width: 60px;
   height: 60px;
-  background: #689f38;
-  border: 2px solid #689f38;
+  background: #2e7d32; /* dark green */
+  border: 2px solid #1b5e20; /* darker green */
   border-radius: 50%;
   color: white;
   font-size: 1.4rem;
@@ -197,19 +197,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(104, 159, 56, 0.3);
+  box-shadow: 0 4px 15px rgba(27, 94, 32, 0.35);
   position: relative;
 }
 
 .nav-arrow:hover:not(:disabled) {
-  background: #a5d6a7;
-  border-color: #689f38;
+  background: #1b5e20; /* darker green */
+  border-color: #2e7d32;
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(104, 159, 56, 0.4);
+  box-shadow: 0 8px 25px rgba(27, 94, 32, 0.45);
 }
 
 .nav-arrow:active:not(:disabled) {
   transform: scale(0.95);
+  background: #154d1a; /* deepest green */
+  border-color: #1b5e20;
+  box-shadow: 0 4px 12px rgba(21, 77, 26, 0.5);
 }
 
 .nav-arrow:disabled {
