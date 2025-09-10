@@ -118,16 +118,6 @@ export default function OurServices() {
             <FaArrowRight />
           </button>
         </div>
-
-        {/* Decorative Plants */}
-        <div className="decorative-plants">
-          <div className="plant plant-1">🌱</div>
-          <div className="plant plant-2">🌿</div>
-          <div className="plant plant-3">🌱</div>
-          <div className="plant plant-4">🌿</div>
-          <div className="plant plant-5">🌱</div>
-          <div className="plant plant-6">🌿</div>
-        </div>
       </div>
 
       {/* Scroll to Top Button */}

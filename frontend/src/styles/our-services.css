@@ -2,8 +2,23 @@
 .our-services {
   position: relative;
   background: #f8f9fa;
+  background-image: url('/images/services/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 80px 0;
   overflow: hidden;
+}
+
+.our-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 249, 250, 0.9);
+  z-index: 1;
 }
 
 .services-container {
@@ -11,6 +26,7 @@
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  z-index: 2;
 }
 
 /* Header Styles */
@@ -30,7 +46,7 @@
 .services-label {
   display: block;
   font-size: 1rem;
-  color: #666;
+  color: #2d3748;
   font-weight: 600;
   margin-bottom: 12px;
   text-transform: uppercase;
@@ -64,55 +80,45 @@
 
 .service-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(139, 195, 74, 0.1);
+  border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #8bc34a, #689f38);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(139, 195, 74, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: #8bc34a;
 }
 
 .service-icon {
   width: 80px;
   height: 80px;
   margin: 0 auto 24px;
-  background: linear-gradient(135deg, #8bc34a, #689f38);
+  background: transparent;
+  border: 3px solid #8bc34a;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 2rem;
+  color: #8bc34a;
+  font-size: 2.5rem;
   transition: all 0.3s ease;
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(139, 195, 74, 0.3);
+  background: #8bc34a;
+  color: white;
+  transform: scale(1.05);
 }
 
 .service-title {
@@ -148,24 +154,26 @@
 }
 
 .nav-arrow {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: #8bc34a;
-  border: none;
-  border-radius: 12px;
+  border: 3px solid #689f38;
+  border-radius: 16px;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
 }
 
 .nav-arrow:hover {
-  background: #689f38;
+  background: #a5d6a7;
+  border-color: #8bc34a;
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(139, 195, 74, 0.3);
+  box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
 }
 
 .nav-arrow:active {
@@ -184,6 +192,7 @@
   justify-content: space-around;
   opacity: 0.6;
   pointer-events: none;
+  z-index: 1;
 }
 
 .plant {
@@ -243,12 +252,13 @@
   
   .service-card {
     padding: 30px 20px;
+    height: 260px;
   }
   
   .service-icon {
     width: 70px;
     height: 70px;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
@@ -277,12 +287,14 @@
   
   .service-card {
     padding: 25px 20px;
+    height: auto;
+    min-height: 240px;
   }
   
   .service-icon {
     width: 60px;
     height: 60px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   
   .service-title {
@@ -290,9 +302,9 @@
   }
   
   .nav-arrow {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
   }
   
   .scroll-to-top {
@@ -314,12 +326,13 @@
   
   .service-card {
     padding: 20px 15px;
+    min-height: 220px;
   }
   
   .service-icon {
     width: 50px;
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   
   .service-title {
