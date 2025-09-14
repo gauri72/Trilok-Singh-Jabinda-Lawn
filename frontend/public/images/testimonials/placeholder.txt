@@ -1,0 +1,15 @@
+# Testimonials Images Directory
+
+This directory should contain testimonial profile images:
+
+- rajesh-kumar.jpg
+- priya-sharma.jpg  
+- amit-patel.jpg
+- default-avatar.jpg (fallback image)
+
+For now, the component will use placeholder images. You can replace these with actual client photos.
+
+Recommended image specifications:
+- Size: 300x300px minimum
+- Format: JPG or PNG
+- Style: Professional headshots with neutral backgrounds

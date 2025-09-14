@@ -205,7 +205,7 @@ body{ font-family: Arial, Helvetica, sans-serif; font-size:17px; }
   .ls-searchbox{ display:none; }
   .ls-burger{ display:block; justify-self:end; }
   .ls-actions{ gap:12px; }
-  .ls-cta{ padding:12px 18px; font-size:0.95rem; }
+  .ls-cta{ display:none; } /* Hide CTA button on mobile */
   .ls-name{ font-size:1.1rem; }
   .ls-tagline{ font-size:0.7rem; }
   .ls-logo svg{ font-size:32px; }
@@ -226,7 +226,7 @@ body{ font-family: Arial, Helvetica, sans-serif; font-size:17px; }
   .ls-burger{ display:block; justify-self:end; padding:8px; }
   .ls-b-line{ width:22px; height:2px; margin:5px 0; }
   .ls-actions{ gap:8px; }
-  .ls-cta{ padding:10px 14px; font-size:0.85rem; }
+  .ls-cta{ display:none; } /* Hide CTA button on mobile */
   .ls-name{ font-size:1rem; }
   .ls-tagline{ font-size:0.65rem; }
   .ls-logo svg{ font-size:28px; }
@@ -250,7 +250,7 @@ body{ font-family: Arial, Helvetica, sans-serif; font-size:17px; }
   .ls-name{ font-size:0.9rem; }
   .ls-tagline{ font-size:0.6rem; }
   .ls-logo svg{ font-size:24px; }
-  .ls-cta{ padding:8px 12px; font-size:0.8rem; }
+  .ls-cta{ display:none; } /* Hide CTA button on very small screens */
   .ls-brand{ gap:4px; }
   
   .ls-mobile-header{ padding:10px 12px; }

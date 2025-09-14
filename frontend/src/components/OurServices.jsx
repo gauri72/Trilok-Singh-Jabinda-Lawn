@@ -119,8 +119,8 @@ export default function OurServices() {
       <div className="services-container">
         {/* Header */}
         <div className={`services-header ${isVisible ? 'animate-in' : ''}`}>
-          <span className="services-label">Services of Trilok Singh Jabinda Lawn</span>
-          <h2 className="services-title">Explore Our Best Offer For Events</h2>
+          <span className="services-label">Our Services</span>
+          <h2 className="services-title">Where Every Celebration Becomes Unforgettable</h2>
         </div>
 
         {/* Services Grid */}

@@ -6,7 +6,7 @@ const LINKS = [
   { name: 'Home', href: '#' },
   { name: 'About Us', href: '#about' },
   { name: 'Lawn', href: '#lawn' },
-  { name: 'Booking', href: '#booking' },
+  { name: 'Gallery', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -101,8 +101,8 @@ export default function LandshaperNavbar() {
                 <FaSearch size={20} />
               </button>
             </form>
-            <a href="#booking" className="ls-cta" onClick={() => handleLinkClick('Booking')}>
-              Book Now
+            <a href="#lawn" className="ls-cta" onClick={() => handleLinkClick('Lawn')}>
+              Explore Lawn
             </a>
           </div>
         </div>
@@ -144,11 +144,11 @@ export default function LandshaperNavbar() {
         </ul>
         
         <a 
-          href="#booking" 
+          href="#lawn" 
           className="ls-m-cta" 
-          onClick={() => handleLinkClick('Booking')}
+          onClick={() => handleLinkClick('Lawn')}
         >
-          Book Now
+          Explore Lawn
         </a>
       </div>
     </header>
