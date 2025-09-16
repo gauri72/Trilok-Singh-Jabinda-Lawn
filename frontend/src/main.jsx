@@ -6,6 +6,7 @@ import OurServices from './components/OurServices'
 import WhyChooseUs from './components/WhyChooseUs'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
+import ContactHome from './components/ContactHome'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import ContactPage from './components/ContactPage'
@@ -30,7 +31,7 @@ function App() {
             <OurServices />
             <WhyChooseUs />
             <Testimonials />
-            <Contact />
+            <ContactHome />
           </>
         )
     }
