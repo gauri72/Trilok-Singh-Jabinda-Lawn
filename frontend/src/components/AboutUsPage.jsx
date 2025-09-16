@@ -3,8 +3,14 @@ import { FaArrowRight, FaFacebookF, FaTwitter, FaLinkedinIn, FaSkype } from 'rea
 import '../styles/about-us.css'
 
 export default function AboutUsPage() {
-  // Team section removed as per request
-  const teamMembers = []
+  const teamMembers = [
+    { id: 1, name: 'Joshua Bevan', role: 'Gardner', image: '/images/gallery/gallery-1.jpg' },
+    { id: 2, name: 'Victoria Hyde', role: 'Senior Farmer', image: '/images/gallery/gallery-2.jpg' },
+    { id: 3, name: 'Louis Clayton', role: 'Gardner', image: '/images/gallery/gallery-3.jpg' },
+    { id: 4, name: 'Emily Greenwood', role: 'Senior Farmer', image: '/images/gallery/gallery-4.jpg' },
+    { id: 5, name: 'Daniel Hart', role: 'Gardner', image: '/images/gallery/gallery-5.jpg' },
+    { id: 6, name: 'Ava Patel', role: 'Senior Farmer', image: '/images/gallery/gallery-6.jpg' }
+  ]
 
   return (
     <div className="about-page">
@@ -69,7 +75,53 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Team section removed */}
+      {/* Our Trained Staff (Team Slider) */}
+      <section className="team-slider-section">
+        <div className="container">
+          <div className="team-slider-header">
+            <span className="team-small">Meet our Team</span>
+            <h2 className="team-big">Our Trained Staff</h2>
+          </div>
+
+          <div className="team-slider-wrap">
+            <button className="team-nav prev" aria-label="Previous" onClick={() => {
+              const scroller = document.querySelector('.team-cards');
+              if (scroller) scroller.scrollBy({ left: -320, behavior: 'smooth' })
+            }}>◀</button>
+
+            <div className="team-cards" role="list">
+              {teamMembers.map((m) => (
+                <div key={m.id} className="team-card-v2" role="listitem">
+                  <div className="team-card-photo">
+                    <img src={m.image} alt={m.name} />
+                  </div>
+                  <div className="team-card-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Twitter">t</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                  </div>
+                  <div className="team-card-info">
+                    <div className="team-card-name">{m.name}</div>
+                    <div className="team-card-role">{m.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button className="team-nav next" aria-label="Next" onClick={() => {
+              const scroller = document.querySelector('.team-cards');
+              if (scroller) scroller.scrollBy({ left: 320, behavior: 'smooth' })
+            }}>▶</button>
+          </div>
+
+          <div className="team-dots">
+            <button className="dot" aria-label="slide" />
+            <button className="dot active" aria-label="slide" />
+          </div>
+        </div>
+
+        <button className="scroll-to-top" aria-label="Scroll to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>↑</button>
+      </section>
     </div>
   )
 }
