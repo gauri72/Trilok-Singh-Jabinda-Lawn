@@ -36,6 +36,37 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Introduction (Overview) Section */}
+      <section className="introduction-section">
+        <div className="container">
+          <div className="introduction-grid">
+            <div className="introduction-content">
+              <div className="intro-header">
+                <div className="intro-accent"></div>
+                <div className="intro-text">
+                  <span className="intro-label">Welcome to our Company</span>
+                  <h2 className="intro-title">Know About Us</h2>
+                </div>
+              </div>
+
+              <div className="intro-paragraphs">
+                <p>
+                  We are a full-service events lawn and landscaping venue focused on delivering memorable experiences. From weddings and receptions to corporate functions, our dedicated team handles planning, setup, and on-site coordination while maintaining beautiful, guest-ready grounds year-round.
+                </p>
+                <p>
+                  Our services include lawn care and seasonal maintenance, custom décor layouts, lighting, staging, and vendor coordination. We blend nature with hospitality so your occasion runs smoothly and looks stunning.
+                </p>
+              </div>
+
+              <button className="intro-cta">
+                EXPLORE SERVICES
+                <FaArrowRight className="cta-icon" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Introduction Section removed as per request */}
 
       {/* Team Slider removed as per request */}
