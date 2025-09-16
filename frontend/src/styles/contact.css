@@ -216,10 +216,34 @@
 }
 
 /* Google Maps Background */
-/* legacy map background rules no longer used */
+/* Map background for HOME contact section */
+.map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.map-background iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(30%) contrast(1.1);
+}
 
 /* Dark overlay for better text readability */
-/* removed dark overlay */
+/* Dark overlay over the map on HOME section */
+.contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
 
 .contact-container {
   max-width: 1200px;
