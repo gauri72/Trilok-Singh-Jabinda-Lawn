@@ -54,9 +54,8 @@ const Footer = () => {
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
               <div className="contact-details">
-                <p>123 Garden Street</p>
-                <p>Green Valley, City 12345</p>
-                <p>State, Country</p>
+                <p>Gut No, 26, Chh, Shahnoorwadi</p>
+                <p>Chhatrapati Sambhajinagar, Maharashtra 431009</p>
               </div>
             </div>
             <div className="contact-item">

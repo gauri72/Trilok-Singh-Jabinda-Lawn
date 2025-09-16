@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import LandshaperNavbar from './components/LandshaperNavbar'
 import HeroSection from './components/HeroSection'
@@ -7,16 +7,36 @@ import WhyChooseUs from './components/WhyChooseUs'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Gallery from './components/Gallery'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+
+  const handleNavigation = (page) => {
+    setCurrentPage(page)
+  }
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'gallery':
+        return <Gallery />
+      default:
+        return (
+          <>
+            <HeroSection />
+            <OurServices />
+            <WhyChooseUs />
+            <Testimonials />
+            <Contact />
+          </>
+        )
+    }
+  }
+
   return (
     <>
-      <LandshaperNavbar />
-      <HeroSection />
-      <OurServices />
-      <WhyChooseUs />
-      <Testimonials />
-      <Contact />
+      <LandshaperNavbar onNavigate={handleNavigation} />
+      {renderPage()}
       <Footer />
       <main style={{paddingTop: 0}}>
         {/* Additional sections will go here */}

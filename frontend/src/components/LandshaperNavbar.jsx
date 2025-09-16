@@ -3,14 +3,14 @@ import { FaLeaf, FaSearch, FaPhoneAlt, FaClock, FaMapMarkerAlt, FaTimes } from '
 import '../styles/landshaper-navbar.css'
 
 const LINKS = [
-  { name: 'Home', href: '#' },
-  { name: 'About Us', href: '#about' },
-  { name: 'Lawn', href: '#lawn' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '#', page: 'home' },
+  { name: 'About Us', href: '#about', page: 'home' },
+  { name: 'Lawn', href: '#lawn', page: 'home' },
+  { name: 'Gallery', href: '#gallery', page: 'gallery' },
+  { name: 'Contact', href: '#contact', page: 'home' },
 ]
 
-export default function LandshaperNavbar() {
+export default function LandshaperNavbar({ onNavigate }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('Home')
@@ -27,9 +27,12 @@ export default function LandshaperNavbar() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  const handleLinkClick = (linkName) => {
+  const handleLinkClick = (linkName, page) => {
     setActive(linkName)
     setOpen(false)
+    if (onNavigate) {
+      onNavigate(page)
+    }
   }
 
   const handleSearch = (e) => {
@@ -82,7 +85,10 @@ export default function LandshaperNavbar() {
                 <a 
                   href={link.href} 
                   className={`ls-link ${active === link.name ? 'active' : ''}`} 
-                  onClick={() => handleLinkClick(link.name)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleLinkClick(link.name, link.page)
+                  }}
                 >
                   {link.name}
                 </a>
@@ -135,7 +141,10 @@ export default function LandshaperNavbar() {
               <a 
                 href={link.href} 
                 className="ls-m-link" 
-                onClick={() => handleLinkClick(link.name)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleLinkClick(link.name, link.page)
+                }}
               >
                 {link.name}
               </a>

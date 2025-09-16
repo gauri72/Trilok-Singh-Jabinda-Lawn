@@ -183,7 +183,7 @@
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  border: 6px solid transparent;
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.6s ease-out forwards;
@@ -211,7 +211,7 @@
 .feature-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border-color: #8bc34a;
+  border: 6px solid #8bc34a;
 }
 
 .feature-icon {
