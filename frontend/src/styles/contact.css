@@ -84,9 +84,9 @@
 
 .contact-info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .info-card {
@@ -208,11 +208,16 @@
 }
 
 @media (max-width: 992px) {
-  .contact-info-grid {
-    grid-template-columns: 1fr;
-  }
+  .contact-info-grid { grid-template-columns: 1fr; gap: 28px; }
   .message-title { font-size: 2rem; }
   .info-title { font-size: 2rem; }
+  .contact-info-section { padding: 60px 0; }
+  .map-embed { height: 300px; }
+  /* Info items scale down */
+  .info-item { grid-template-columns: 56px 1fr; gap: 14px; padding: 14px; }
+  .info-icon { width: 56px; height: 56px; font-size: 22px; }
+  .info-label { font-size: 1rem; }
+  .info-text { font-size: 0.93rem; }
 }
 
 /* Google Maps Background */
@@ -458,6 +463,13 @@
     padding: 60px 0;
     min-height: 80vh;
   }
+  /* Hero */
+  .contact-hero { height: 45vh; min-height: 260px; }
+  .contact-hero-text { padding: 24px 36px; }
+  .contact-hero-text h1 { font-size: 2.2rem; }
+  /* Breadcrumb */
+  .contact-breadcrumb { padding: 16px 0; }
+  .container { padding: 0 16px; }
   
   .contact-content {
     justify-content: center;
@@ -474,6 +486,13 @@
     padding: 50px 0;
     min-height: 70vh;
   }
+  /* Hero */
+  .contact-hero { height: 40vh; min-height: 240px; }
+  .contact-hero-text { padding: 20px 28px; }
+  .contact-hero-text h1 { font-size: 1.9rem; }
+  /* Breadcrumb */
+  .contact-breadcrumb { padding: 14px 0; }
+  .breadcrumb-nav { font-size: 0.9rem; }
   
   .contact-content {
     justify-content: center;
@@ -487,6 +506,20 @@
   .form-title {
     font-size: 1.3rem;
   }
+  /* Contact page - stack inputs */
+  .message-form .form-row { grid-template-columns: 1fr; }
+  .message-form { gap: 12px; }
+  .info-card { padding: 24px; }
+  .message-title { font-size: 1.8rem; }
+  .info-title { font-size: 1.8rem; }
+  .contact-info-section { padding: 50px 0; }
+  .map-embed { height: 220px; }
+  /* Info items further reduce */
+  .info-item { grid-template-columns: 48px 1fr; gap: 12px; padding: 12px; }
+  .info-icon { width: 48px; height: 48px; font-size: 20px; border-radius: 12px; }
+  .info-label { font-size: 0.95rem; }
+  .info-text { font-size: 0.9rem; }
+  .message-form input, .message-form textarea { padding: 13px 14px; font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
@@ -494,6 +527,13 @@
     padding: 40px 0;
     min-height: 60vh;
   }
+  /* Hero */
+  .contact-hero { height: 36vh; min-height: 200px; }
+  .contact-hero-text { padding: 16px 22px; border-width: 1.5px; }
+  .contact-hero-text h1 { font-size: 1.6rem; }
+  /* Breadcrumb */
+  .contact-breadcrumb { padding: 12px 0; }
+  .breadcrumb-nav { font-size: 0.85rem; }
   
   .contact-form-container {
     padding: 20px;
@@ -514,6 +554,19 @@
     padding: 15px 25px;
     font-size: 1rem;
   }
+  /* Tighter layout for small screens */
+  .info-card { padding: 22px; }
+  .contact-hero-text h1 { font-size: 2rem; }
+  .message-title { font-size: 1.6rem; }
+  .info-title { font-size: 1.6rem; }
+  .contact-info-section { padding: 40px 0; }
+  .map-embed { height: 180px; border-radius: 10px; }
+  /* Stack label and text tighter */
+  .info-item { grid-template-columns: 44px 1fr; gap: 10px; padding: 10px; border-radius: 12px; }
+  .info-icon { width: 44px; height: 44px; font-size: 18px; border-radius: 10px; }
+  .info-label { font-size: 0.9rem; }
+  .info-text { font-size: 0.88rem; }
+  .message-form input, .message-form textarea { padding: 12px 12px; font-size: 0.93rem; }
 }
 
 /* Desktop sizing adjustments */

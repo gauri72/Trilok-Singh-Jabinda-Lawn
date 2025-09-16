@@ -4,7 +4,7 @@ import '../styles/landshaper-navbar.css'
 
 const LINKS = [
   { name: 'Home', href: '#', page: 'home' },
-  { name: 'About Us', href: '#about', page: 'home' },
+  { name: 'About Us', href: '#about', page: 'about' },
   { name: 'Lawn', href: '#lawn', page: 'home' },
   { name: 'Gallery', href: '#gallery', page: 'gallery' },
   { name: 'Contact Us', href: '#contact', page: 'contact' },

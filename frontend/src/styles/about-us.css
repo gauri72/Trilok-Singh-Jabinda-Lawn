@@ -1,0 +1,324 @@
+/* About Us Page Styles */
+.about-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Hero Banner - consistent with Gallery/Contact */
+.about-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 300px;
+  background-image:
+    linear-gradient(rgba(46, 125, 50, 0.7), rgba(27, 94, 32, 0.8)),
+    url('/images/gallery/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-hero-text {
+  background: transparent;
+  padding: 30px 50px;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: 2px solid #ffffff;
+}
+
+.about-hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Breadcrumb Navigation */
+.about-breadcrumb {
+  background: #ffffff;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item:hover {
+  color: #2e7d32;
+}
+
+.breadcrumb-item.active {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+  font-size: 0.7rem;
+}
+
+/* Introduction Section */
+.introduction-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.introduction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.introduction-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.intro-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.intro-accent {
+  width: 4px;
+  height: 60px;
+  background: #8bc34a;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.intro-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8bc34a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.intro-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.intro-paragraphs p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+.intro-cta {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #8bc34a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+}
+
+.intro-cta:hover {
+  background: #689f38;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+}
+
+.cta-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.intro-cta:hover .cta-icon {
+  transform: translateX(4px);
+}
+
+.introduction-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-hero {
+    height: 45vh;
+    min-height: 280px;
+  }
+  
+  .about-hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .about-hero-text {
+    padding: 25px 35px;
+  }
+  
+  .introduction-grid {
+    gap: 40px;
+  }
+  
+  .intro-title {
+    font-size: 2.2rem;
+  }
+  
+  .intro-paragraphs p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 40vh;
+    min-height: 250px;
+  }
+  
+  .about-hero-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-hero-text {
+    padding: 20px 30px;
+  }
+  
+  .introduction-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .intro-header {
+    gap: 16px;
+  }
+  
+  .intro-accent {
+    height: 50px;
+  }
+  
+  .intro-title {
+    font-size: 2rem;
+  }
+  
+  .intro-paragraphs p {
+    font-size: 0.9rem;
+  }
+  
+  .intro-cta {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 35vh;
+    min-height: 200px;
+  }
+  
+  .about-hero-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .about-hero-text {
+    padding: 15px 20px;
+  }
+  
+  .introduction-section {
+    padding: 60px 0;
+  }
+  
+  .introduction-grid {
+    gap: 30px;
+  }
+  
+  .intro-header {
+    gap: 12px;
+  }
+  
+  .intro-accent {
+    height: 40px;
+    width: 3px;
+  }
+  
+  .intro-label {
+    font-size: 0.9rem;
+  }
+  
+  .intro-title {
+    font-size: 1.8rem;
+  }
+  
+  .intro-paragraphs p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  
+  .intro-cta {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+  }
+}

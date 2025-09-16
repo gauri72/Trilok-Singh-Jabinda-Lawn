@@ -10,6 +10,7 @@ import ContactHome from './components/ContactHome'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import ContactPage from './components/ContactPage'
+import AboutUsPage from './components/AboutUsPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -24,6 +25,8 @@ function App() {
         return <Gallery />
       case 'contact':
         return <ContactPage />
+      case 'about':
+        return <AboutUsPage />
       default:
         return (
           <>

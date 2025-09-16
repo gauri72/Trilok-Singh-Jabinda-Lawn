@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import '../styles/contact.css'
 
 export default function ContactInfoSection() {
   const [formData, setFormData] = useState({
