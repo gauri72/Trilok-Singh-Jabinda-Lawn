@@ -3,45 +3,8 @@ import { FaArrowRight, FaFacebookF, FaTwitter, FaLinkedinIn, FaSkype } from 'rea
 import '../styles/about-us.css'
 
 export default function AboutUsPage() {
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Wanda Mckouen",
-      role: "CEO & Founder",
-      description: "The master-builders off human happiness no one rejects, ours avoids pleasure itself.",
-      image: "/images/hero/gallery-secondary.jpg",
-      socialIcons: []
-    },
-    {
-      id: 2,
-      name: "Mervin Sill",
-      role: "Senior Manager",
-      description: "Anyone who loves or pursues or desires to obtain pain of itself, our because it is pain",
-      image: "/images/hero/gallery-tertiary.jpg",
-      socialIcons: [
-        { icon: FaFacebookF, link: "#" },
-        { icon: FaTwitter, link: "#" },
-        { icon: FaLinkedinIn, link: "#" },
-        { icon: FaSkype, link: "#" }
-      ]
-    },
-    {
-      id: 3,
-      name: "Missy Quiring",
-      role: "CEO & Founder",
-      description: "How all this mistaken idea of denouncing pleasure and praising pain was born and replace.",
-      image: "/images/hero/gallery-secondary.jpg",
-      socialIcons: []
-    },
-    {
-      id: 4,
-      name: "Johnsie Filak",
-      role: "CEO & Founder",
-      description: "I will give you a complete account of the system, and expound the actual teachings the great ...",
-      image: "/images/hero/gallery-tertiary.jpg",
-      socialIcons: []
-    }
-  ]
+  // Team section removed as per request
+  const teamMembers = []
 
   return (
     <div className="about-page">
@@ -106,54 +69,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Our Team Section */}
-      <section className="our-team-section">
-        <div className="container">
-          <div className="team-header">
-            <h2 className="team-title">
-              <span className="team-title-black">Our</span>
-              <span className="team-title-green">Landshapers</span>
-            </h2>
-          </div>
-          
-          <div className="team-grid">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="team-card">
-                <div className="team-image-container">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="team-member-image"
-                  />
-                  <div className="role-badge">
-                    {member.role}
-                  </div>
-                </div>
-                
-                <div className="team-member-info">
-                  <h3 className="team-member-name">{member.name}</h3>
-                  <p className="team-member-description">{member.description}</p>
-                  
-                  {member.socialIcons.length > 0 && (
-                    <div className="team-social-icons">
-                      {member.socialIcons.map((social, index) => (
-                        <a 
-                          key={index}
-                          href={social.link} 
-                          className="social-icon"
-                          aria-label={`${member.name} social media`}
-                        >
-                          <social.icon />
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Team section removed */}
     </div>
   )
 }
