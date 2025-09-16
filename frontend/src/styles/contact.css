@@ -62,7 +62,7 @@
 
 /* Info + Message Section (below hero) */
 .contact-info-section {
-  background: #d9e3eb33; /* light blueish bg like design */
+  background: #ffffff; /* white background as requested */
   padding: 80px 0;
 }
 
@@ -75,7 +75,10 @@
 
 .info-card {
   background: linear-gradient(0deg, #8bc34a, #8bc34a);
-  border-radius: 24px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding: 40px;
   color: #ffffff;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
@@ -127,10 +130,10 @@
 }
 
 .message-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  background: transparent; /* remove card background */
+  border-radius: 0; /* remove rounding */
+  padding: 0; /* remove padding so it sits on background */
+  box-shadow: none; /* remove shadow */
 }
 
 .message-title {
@@ -184,6 +187,8 @@
 .submit-now:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 24px rgba(0,0,0,0.16);
+  background: #8bc34a; /* light green on hover */
+  color: #0f172a;
 }
 
 @media (max-width: 992px) {

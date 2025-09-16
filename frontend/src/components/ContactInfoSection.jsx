@@ -49,7 +49,7 @@ export default function ContactInfoSection() {
     <section className="contact-info-section">
       <div className="container contact-info-grid">
         <div className="info-card">
-          <h2 className="info-title">Contact\nInformation</h2>
+          <h2 className="info-title">Contact Information</h2>
           <div className="info-item">
             <div className="info-icon"><FaMapMarkerAlt /></div>
             <div className="info-content">
