@@ -7,7 +7,7 @@ const LINKS = [
   { name: 'About Us', href: '#about', page: 'home' },
   { name: 'Lawn', href: '#lawn', page: 'home' },
   { name: 'Gallery', href: '#gallery', page: 'gallery' },
-  { name: 'Contact', href: '#contact', page: 'home' },
+  { name: 'Contact Us', href: '#contact', page: 'contact' },
 ]
 
 export default function LandshaperNavbar({ onNavigate }) {

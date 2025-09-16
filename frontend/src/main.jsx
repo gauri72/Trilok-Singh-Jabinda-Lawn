@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
+import ContactPage from './components/ContactPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -20,6 +21,8 @@ function App() {
     switch (currentPage) {
       case 'gallery':
         return <Gallery />
+      case 'contact':
+        return <ContactPage />
       default:
         return (
           <>
