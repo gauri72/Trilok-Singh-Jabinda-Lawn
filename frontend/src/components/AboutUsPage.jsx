@@ -36,92 +36,9 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="introduction-section">
-        <div className="container">
-          <div className="introduction-grid">
-            <div className="introduction-content">
-              <div className="intro-header">
-                <div className="intro-accent"></div>
-                <div className="intro-text">
-                  <span className="intro-label">Welcome to our Company</span>
-                  <h2 className="intro-title">Know About Us</h2>
-                </div>
-              </div>
-              
-              <div className="intro-paragraphs">
-                <p>
-                  We provide ongoing property maintenance which includes lawn mowing, fertilizing, spring and fall cleanups, de-thatching, aerating, seeding, mulching, edging, herbicide application, plant health care, snow plowing, pruning, and tree care and removal.
-                </p>
-                <p>
-                  We also provide the design and installation of many landscape construction projects including walkways, steps, retaining walls, patios, veneer stone, planting, trans-planting, drainage systems, lawn renovation and installation, paver driveways, cobblestone edging, and excavation.
-                </p>
-              </div>
+      {/* Introduction Section removed as per request */}
 
-              <button className="intro-cta">
-                GO TO ALL SERVICES
-                <FaArrowRight className="cta-icon" />
-              </button>
-            </div>
-
-            <div className="introduction-image">
-              <img 
-                src="/images/hero/gallery-secondary.jpg" 
-                alt="Our professional gardening team" 
-                className="team-photo"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Trained Staff (Team Slider) */}
-      <section className="team-slider-section">
-        <div className="container">
-          <div className="team-slider-header">
-            <span className="team-small">Meet our Team</span>
-            <h2 className="team-big">Our Trained Staff</h2>
-          </div>
-
-          <div className="team-slider-wrap">
-            <button className="team-nav prev" aria-label="Previous" onClick={() => {
-              const scroller = document.querySelector('.team-cards');
-              if (scroller) scroller.scrollBy({ left: -320, behavior: 'smooth' })
-            }}>◀</button>
-
-            <div className="team-cards" role="list">
-              {teamMembers.map((m) => (
-                <div key={m.id} className="team-card-v2" role="listitem">
-                  <div className="team-card-photo">
-                    <img src={m.image} alt={m.name} />
-                  </div>
-                  <div className="team-card-social">
-                    <a href="#" aria-label="Facebook">f</a>
-                    <a href="#" aria-label="Twitter">t</a>
-                    <a href="#" aria-label="LinkedIn">in</a>
-                  </div>
-                  <div className="team-card-info">
-                    <div className="team-card-name">{m.name}</div>
-                    <div className="team-card-role">{m.role}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <button className="team-nav next" aria-label="Next" onClick={() => {
-              const scroller = document.querySelector('.team-cards');
-              if (scroller) scroller.scrollBy({ left: 320, behavior: 'smooth' })
-            }}>▶</button>
-          </div>
-
-          <div className="team-dots">
-            <button className="dot" aria-label="slide" />
-            <button className="dot active" aria-label="slide" />
-          </div>
-        </div>
-
-        <button className="scroll-to-top" aria-label="Scroll to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>↑</button>
-      </section>
+      {/* Team Slider removed as per request */}
     </div>
   )
 }
