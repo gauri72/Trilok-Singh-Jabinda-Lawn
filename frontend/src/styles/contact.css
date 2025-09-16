@@ -6,6 +6,22 @@
   overflow: hidden;
 }
 
+/* Slim Map Section (replaces overlaid form + overlay) */
+.contact-map-section {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.map-embed {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 360px; /* reduced map height */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
 /* Page wrapper */
 .contact-page {
   min-height: 100vh;
@@ -200,32 +216,10 @@
 }
 
 /* Google Maps Background */
-.map-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.map-background iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  filter: grayscale(30%) contrast(1.1);
-}
+/* legacy map background rules no longer used */
 
 /* Dark overlay for better text readability */
-.contact-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-}
+/* removed dark overlay */
 
 .contact-container {
   max-width: 1200px;
