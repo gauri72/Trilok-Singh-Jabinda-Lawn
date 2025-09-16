@@ -36,52 +36,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Mission & Values Section */}
-      <section className="about-values-section">
-        <div className="container">
-          <div className="values-header">
-            <span className="values-label">What drives us</span>
-            <h2 className="values-title">Our Mission & Values</h2>
-            <p className="values-sub">
-              We create memorable events by blending natural beauty with dependable planning.
-              Our team focuses on care, commitment, and consistency in every celebration.
-            </p>
-          </div>
-
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-icon">🌿</div>
-              <h3 className="value-title">Care for Nature</h3>
-              <p className="value-text">Sustainable grounds care, seasonal curation, and detail-first setups.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">🤝</div>
-              <h3 className="value-title">Client-first</h3>
-              <p className="value-text">Clear communication, flexible layouts, and on-site coordination.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">⏱️</div>
-              <h3 className="value-title">On-time Delivery</h3>
-              <p className="value-text">Reliable schedules, vendor alignment, and smooth event flow.</p>
-            </div>
-          </div>
-
-          <div className="values-stats">
-            <div className="stat-item">
-              <div className="stat-num">10+<span>yrs</span></div>
-              <div className="stat-label">Experience</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-num">800+</div>
-              <div className="stat-label">Events Hosted</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-num">4.8★</div>
-              <div className="stat-label">Guest Rating</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Mission & Values section removed as requested */}
 
 
       {/* Introduction Section removed as per request */}
