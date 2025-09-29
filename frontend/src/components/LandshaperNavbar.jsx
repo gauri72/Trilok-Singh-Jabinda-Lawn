@@ -10,7 +10,7 @@ const LINKS = [
   { name: 'Contact Us', href: '#contact', page: 'contact' },
 ]
 
-export default function LandshaperNavbar({ onNavigate }) {
+export default function LandshaperNavbar({ onNavigate, currentPage }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('Home')
@@ -26,6 +26,20 @@ export default function LandshaperNavbar({ onNavigate }) {
     document.body.style.overflow = open ? 'hidden' : '' 
     return () => { document.body.style.overflow = '' }
   }, [open])
+
+  // Sync active link with currentPage prop when provided
+  useEffect(() => {
+    if (!currentPage) return
+    const pageToName = {
+      home: 'Home',
+      about: 'About Us',
+      lawn: 'Lawn Details',
+      gallery: 'Gallery',
+      contact: 'Contact Us',
+    }
+    const name = pageToName[currentPage]
+    if (name) setActive(name)
+  }, [currentPage])
 
   const handleLinkClick = (linkName, page) => {
     setActive(linkName)
@@ -53,7 +67,7 @@ export default function LandshaperNavbar({ onNavigate }) {
 
       <nav className="ls-bar">
         <div className="ls-wrap">
-          <a href="#" className="ls-brand" aria-label="Trilok Singh Jabinda Lawn home" onClick={() => handleLinkClick('Home')}>
+          <a href="#" className="ls-brand" aria-label="Trilok Singh Jabinda Lawn home" onClick={() => handleLinkClick('Home', 'home')}>
             <span className="ls-logo" aria-hidden>
               <FaLeaf color="#8bc34a" size={40} />
             </span>

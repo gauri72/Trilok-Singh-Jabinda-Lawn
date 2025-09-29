@@ -20,7 +20,7 @@ function App() {
       case 'contact':
         return <ContactPage />
       case 'about':
-        return <AboutUsPage onNavigate={handleNavigation} />
+        return <AboutUsPage onNavigate={handleNavigation} currentPage={currentPage} />
       case 'lawn':
         return <LawnPage />
       default:

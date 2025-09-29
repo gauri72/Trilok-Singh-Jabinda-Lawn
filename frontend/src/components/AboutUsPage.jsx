@@ -3,10 +3,11 @@ import '../styles/about-us.css'
 import LandshaperNavbar from './LandshaperNavbar'
 import Footer from './Footer'
 import { FaSeedling, FaFlask, FaTint } from 'react-icons/fa'
+import { FaChevronUp } from 'react-icons/fa'
 import { FaHeadset } from 'react-icons/fa'
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 
-export default function AboutUsPage({ onNavigate }) {
+export default function AboutUsPage({ onNavigate, currentPage = 'about' }) {
   useEffect(() => {
     document.body.classList.add('about-page-active')
     return () => {
@@ -16,7 +17,7 @@ export default function AboutUsPage({ onNavigate }) {
 
   return (
     <div className="about-page">
-      <LandshaperNavbar onNavigate={onNavigate} />
+      <LandshaperNavbar onNavigate={onNavigate} currentPage={currentPage} />
 
       {/* Hero Banner */}
       <section className="about-hero">
@@ -167,6 +168,14 @@ export default function AboutUsPage({ onNavigate }) {
       </section>
 
       <Footer />
+      {/* Scroll to top - same as Home page */}
+      <button
+        className="scroll-to-top"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Scroll to top"
+      >
+        <FaChevronUp />
+      </button>
     </div>
   )
 }
