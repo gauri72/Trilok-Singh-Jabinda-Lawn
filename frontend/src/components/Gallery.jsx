@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight, FaHome, FaChevronRight as FaChevronRight
 import LandshaperNavbar from './LandshaperNavbar'
 import Footer from './Footer'
 import '../styles/gallery.css'
+import '../styles/about-us.css'
 
 export default function Gallery({ onNavigate, currentPage: activePage }) {
   const [currentPage, setCurrentPage] = useState(1)
@@ -136,6 +137,111 @@ export default function Gallery({ onNavigate, currentPage: activePage }) {
       alt: 'Irrigation system for venue',
       category: 'Facilities & Features',
       title: 'Facilities & Features'
+    },
+    {
+      id: 19,
+      src: '/images/gallery/gallery-19.jpg',
+      alt: 'Evening lighting ambiance on lawn',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 20,
+      src: '/images/gallery/gallery-20.jpg',
+      alt: 'Floral décor for wedding entry',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 21,
+      src: '/images/gallery/gallery-21.jpg',
+      alt: 'Stage lighting and backdrop setup',
+      category: 'Facilities & Features',
+      title: 'Facilities & Features'
+    },
+    {
+      id: 22,
+      src: '/images/gallery/gallery-22.jpg',
+      alt: 'Dining arrangement under canopy',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 23,
+      src: '/images/gallery/gallery-23.jpg',
+      alt: 'Garden pathway with lanterns',
+      category: 'Lawn Designs / Landscaping Styles',
+      title: 'Lawn Designs / Landscaping Styles'
+    },
+    {
+      id: 24,
+      src: '/images/gallery/gallery-24.jpg',
+      alt: 'Photo booth corner décor',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 25,
+      src: '/images/gallery/gallery-25.jpg',
+      alt: 'Freshly manicured lawn stripes',
+      category: 'Lawn Designs / Landscaping Styles',
+      title: 'Lawn Designs / Landscaping Styles'
+    },
+    {
+      id: 26,
+      src: '/images/gallery/gallery-26.jpg',
+      alt: 'Cocktail area setup with high tables',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 27,
+      src: '/images/gallery/gallery-27.jpg',
+      alt: 'Kids play zone near lawn',
+      category: 'Facilities & Features',
+      title: 'Facilities & Features'
+    },
+    {
+      id: 28,
+      src: '/images/gallery/gallery-28.jpg',
+      alt: 'Entry arch with floral rings',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 29,
+      src: '/images/gallery/gallery-29.jpg',
+      alt: 'Garden seating with string lights',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 30,
+      src: '/images/gallery/gallery-30.jpg',
+      alt: 'Stage run-up carpeting and décor',
+      category: 'Facilities & Features',
+      title: 'Facilities & Features'
+    },
+    {
+      id: 31,
+      src: '/images/gallery/gallery-31.jpg',
+      alt: 'Buffet counter arrangement',
+      category: 'Events & Functions',
+      title: 'Events & Functions'
+    },
+    {
+      id: 32,
+      src: '/images/gallery/gallery-32.jpg',
+      alt: 'Green wall photo backdrop',
+      category: 'Lawn Designs / Landscaping Styles',
+      title: 'Lawn Designs / Landscaping Styles'
+    },
+    {
+      id: 33,
+      src: '/images/gallery/gallery-33.jpg',
+      alt: 'Sunset view over the venue',
+      category: 'Lawn Designs / Landscaping Styles',
+      title: 'Lawn Designs / Landscaping Styles'
     }
   ]
 
@@ -186,10 +292,10 @@ export default function Gallery({ onNavigate, currentPage: activePage }) {
   return (
     <div className="gallery-page">
       <LandshaperNavbar onNavigate={onNavigate} currentPage={activePage} />
-      {/* Hero Banner */}
-      <section className="gallery-hero">
-        <div className="gallery-hero-content">
-          <div className="gallery-hero-text">
+      {/* Hero Banner (match About Us hero) */}
+      <section className="about-hero">
+        <div className="about-hero-content">
+          <div className="about-hero-text">
             <h1>Gallery</h1>
           </div>
         </div>
