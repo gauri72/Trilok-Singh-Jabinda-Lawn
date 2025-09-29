@@ -59,21 +59,31 @@ const ContactHome = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     setFieldErrors({});
     setSubmitStatus(null);
+    
     if (!validateForm()) {
       return;
     }
+    
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/contact/submit/', {
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      const response = await fetch('http://192.168.1.34:8000/api/contact/submit/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
+      
+      clearTimeout(timeoutId);
 
       const result = await response.json();
 
@@ -84,8 +94,19 @@ const ContactHome = () => {
         setSubmitStatus({ type: 'error', message: result.message || 'An error occurred. Please try again.' });
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus({ type: 'error', message: 'Network error. Please check your connection and try again.' });
+      let errorMessage = 'Network error. Please check your connection and try again.';
+      
+      if (error.name === 'AbortError') {
+        errorMessage = 'Request timeout. Please try again.';
+      } else if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        errorMessage = 'Unable to connect to server. Please check if the backend is running.';
+      } else if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+        errorMessage = 'Connection failed. Please check your internet connection.';
+      } else if (error.message.includes('CORS')) {
+        errorMessage = 'CORS error. Please check server configuration.';
+      }
+      
+      setSubmitStatus({ type: 'error', message: errorMessage });
     } finally {
       setIsSubmitting(false);
     }

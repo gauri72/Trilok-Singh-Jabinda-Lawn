@@ -104,7 +104,7 @@
   font-size: 1.3rem;
   font-weight: 600;
   color: #ffffff;
-  margin: 0 0 25px 0;
+  margin: 0 0 15px 0;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -177,17 +177,37 @@
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 12px;
   text-align: left;
+}
+
+.contact-item .contact-icon {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .contact-icon {
   color: #8bc34a;
-  font-size: 1.1rem;
-  margin-top: 2px;
+  font-size: 1.2rem;
+  margin-top: 3px;
   flex-shrink: 0;
-  width: 16px;
+  width: 24px;
+  height: 24px;
   text-align: center;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  color: #ffffff;
+  transform: scale(1.1);
 }
 
 .contact-details {
@@ -227,6 +247,7 @@
   
   .footer-title {
     font-size: 1.2rem;
+    margin: 0 0 12px 0;
   }
   
   .footer-title::after {
@@ -240,6 +261,18 @@
   
   .contact-details p {
     font-size: 0.9rem;
+  }
+  
+  .contact-item {
+    gap: 14px;
+  }
+  
+  .contact-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    align-self: flex-start;
   }
 }
 
@@ -291,6 +324,7 @@
   
   .footer-title {
     font-size: 1.1rem;
+    margin: 0 0 10px 0;
   }
   
   .footer-title::after {
@@ -309,11 +343,20 @@
   .contact-item {
     justify-content: center;
     text-align: center;
+    gap: 12px;
   }
   
   .contact-details p {
     font-size: 0.85rem;
     text-align: center;
+  }
+  
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+    margin-top: 0;
+    align-self: center;
   }
 }
 
@@ -344,6 +387,7 @@
   
   .footer-title {
     font-size: 1rem;
+    margin: 0 0 8px 0;
   }
   
   .footer-title::after {
@@ -359,6 +403,10 @@
     font-size: 0.8rem;
   }
   
+  .contact-item {
+    gap: 10px;
+  }
+  
   .social-link {
     width: 32px;
     height: 32px;
@@ -366,7 +414,11 @@
   }
   
   .contact-icon {
-    font-size: 1rem;
+    width: 18px;
+    height: 18px;
+    font-size: 0.9rem;
+    margin-top: 0;
+    align-self: center;
   }
 }
 
@@ -394,6 +446,7 @@
   
   .footer-title {
     font-size: 0.9rem;
+    margin: 0 0 6px 0;
   }
   
   .footer-title::after {
@@ -409,6 +462,10 @@
     font-size: 0.75rem;
   }
   
+  .contact-item {
+    gap: 8px;
+  }
+  
   .social-link {
     width: 28px;
     height: 28px;
@@ -416,8 +473,25 @@
   }
   
   .contact-icon {
-    font-size: 0.9rem;
+    width: 16px;
+    height: 16px;
+    font-size: 0.8rem;
+    margin-top: 0;
+    align-self: center;
   }
+}
+
+/* Fix for contact icons - remove any background or border */
+.footer .contact-item svg,
+.footer .contact-item .fa,
+.footer .contact-item [class*="fa-"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block !important;
 }
 
 /* Focus states for accessibility */

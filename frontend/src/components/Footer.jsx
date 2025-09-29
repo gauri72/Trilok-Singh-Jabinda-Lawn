@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa'
+import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md'
 import '../styles/footer.css'
 
 const Footer = () => {
@@ -52,21 +52,21 @@ const Footer = () => {
           <h4 className="footer-title">Contact Information</h4>
           <div className="footer-contact">
             <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon" />
+              <MdLocationOn className="contact-icon" />
               <div className="contact-details">
                 <p>Gut No, 26, Chh, Shahnoorwadi</p>
                 <p>Chhatrapati Sambhajinagar, Maharashtra 431009</p>
               </div>
             </div>
             <div className="contact-item">
-              <FaPhone className="contact-icon" />
+              <MdPhone className="contact-icon" />
               <div className="contact-details">
-                <p>+1 (555) 123-4567</p>
-                <p>+1 (555) 987-6543</p>
+                <p>+91-9975334445</p>
+                <p>+91-9876543210</p>
               </div>
             </div>
             <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
+              <MdEmail className="contact-icon" />
               <div className="contact-details">
                 <p>info@triloklawn.com</p>
                 <p>bookings@triloklawn.com</p>

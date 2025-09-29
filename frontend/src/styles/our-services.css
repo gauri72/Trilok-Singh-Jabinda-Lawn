@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 70px 0;
+  padding: 80px 0; /* standard section spacing */
   overflow: hidden;
 }
 
@@ -32,7 +32,7 @@
 /* Header Styles */
 .services-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 32px; /* reduced spacing */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,8 +74,8 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 25px;
-  margin-bottom: 50px;
+  gap: 24px;
+  margin-bottom: 24px; /* reduced spacing */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -94,14 +94,14 @@
 .service-card {
   background: white;
   border-radius: 20px 20px 0 0;
-  padding: 30px 15px;
+  padding: 26px 14px;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-  height: 320px;
+  height: 270px; /* reduced card height */
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
@@ -184,8 +184,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 36px;
+  margin-bottom: 12px; /* reduced spacing */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -410,13 +410,13 @@
 
 @media (min-width: 1025px) {
   .our-services {
-    padding: 60px 0;
+    padding: 80px 0; /* standard desktop spacing */
   }
   .services-header {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
   }
   .services-grid {
-    gap: 22px;
-    margin-bottom: 35px;
+    gap: 24px;
+    margin-bottom: 32px;
   }
 }

@@ -1,0 +1,172 @@
+/* About Us Page Styles */
+.about-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Hero Banner - consistent with Gallery/Contact */
+.about-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 300px;
+  background-image:
+    linear-gradient(rgba(46, 125, 50, 0.7), rgba(27, 94, 32, 0.8)),
+    url('/images/gallery/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-hero-text {
+  background: transparent;
+  padding: 30px 50px;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: 2px solid #ffffff;
+  position: relative;
+}
+
+.about-hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure any play/video icon in header is hidden */
+.about-hero .play-button,
+.about-hero .play-icon,
+.about-hero .video-icon,
+.about-hero .fa-play,
+.about-hero [aria-label="Play"],
+.about-hero .btn-play,
+.about-hero .hero-play,
+.about-hero .play {
+  display: none !important;
+}
+
+/* Fallback: hide any element inside hero whose class hints at a play control,
+   or generic buttons/anchors that might render the play icon from templates */
+.about-hero [class*="play"],
+.about-hero [class*="Play"],
+.about-hero button,
+.about-hero a[role="button"],
+.about-hero svg[aria-label="play"],
+.about-hero svg[aria-label="Play"],
+.about-hero [data-icon="play"],
+.about-hero [data-play] {
+  display: none !important;
+}
+
+/* Explicitly hide any hero navigation controls on About hero */
+.about-hero .hero-navigation,
+.about-hero .nav-btn,
+.about-hero button.nav-btn,
+.about-hero button[aria-label="Next"],
+.about-hero button[aria-label="Previous"],
+.about-hero [aria-label="Next"],
+.about-hero [aria-label="Previous"] {
+  display: none !important;
+}
+
+/* Global safeguard when About page is active */
+body.about-page-active .hero-navigation,
+body.about-page-active .nav-btn,
+body.about-page-active button[aria-label="Next"],
+body.about-page-active button[aria-label="Previous"] {
+  display: none !important;
+}
+
+/* Remove any decorative icons/pseudo-elements in the header box */
+.about-hero .about-hero-text::before,
+.about-hero .about-hero-text::after,
+.about-hero .about-hero-content::before,
+.about-hero .about-hero-content::after {
+  content: none !important;
+}
+
+/* Hide generic icon elements inside the header */
+.about-hero .about-hero-text svg,
+.about-hero .about-hero-text i,
+.about-hero .about-hero-text [class*="icon"],
+.about-hero .about-hero-text [class*="Icon"],
+.about-hero .about-hero-text img[alt*="play" i] {
+  display: none !important;
+}
+
+/* Breadcrumb Navigation */
+.about-breadcrumb {
+  background: #ffffff;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item:hover {
+  color: #2e7d32;
+}
+
+.breadcrumb-item.active {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+  font-size: 0.7rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-hero { height: 45vh; min-height: 280px; }
+  .about-hero-text h1 { font-size: 2.2rem; }
+  .about-hero-text { padding: 25px 35px; }
+}
+
+@media (max-width: 768px) {
+  .about-hero { height: 40vh; min-height: 250px; }
+  .about-hero-text h1 { font-size: 1.8rem; }
+  .about-hero-text { padding: 20px 30px; }
+}
+
+@media (max-width: 480px) {
+  .about-hero { height: 35vh; min-height: 200px; }
+  .about-hero-text h1 { font-size: 1.5rem; }
+  .about-hero-text { padding: 15px 20px; }
+}
+
+

@@ -1,0 +1,463 @@
+/* Lawn Page Styles */
+.lawn-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Hero Banner - consistent with other pages */
+.lawn-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 300px;
+  background-image:
+    linear-gradient(rgba(46, 125, 50, 0.7), rgba(27, 94, 32, 0.8)),
+    url('/images/gallery/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lawn-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.lawn-hero-text {
+  background: transparent;
+  padding: 30px 50px;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: 2px solid #ffffff;
+  position: relative;
+}
+
+.lawn-hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure any play/video icon in header is hidden */
+.lawn-hero .play-button,
+.lawn-hero .play-icon,
+.lawn-hero .video-icon,
+.lawn-hero .fa-play,
+.lawn-hero [aria-label="Play"],
+.lawn-hero .btn-play,
+.lawn-hero .hero-play,
+.lawn-hero .play {
+  display: none !important;
+}
+
+/* Breadcrumb Navigation */
+.lawn-breadcrumb {
+  background: #ffffff;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item:hover {
+  color: #2e7d32;
+}
+
+.breadcrumb-item.active {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+  font-size: 0.7rem;
+}
+
+/* Lawn Sections */
+.lawn-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.lawn-section.basic-info {
+  background: #ffffff;
+}
+
+.lawn-section.facilities {
+  background: #f8f9fa;
+  background-image: url('/images/services/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lawn-section.facilities::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.lawn-section.accessibility {
+  background: #ffffff;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-label {
+  display: block;
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lawn-section.facilities .section-label {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.lawn-section.facilities .section-title {
+  color: #ffffff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lawn-section.facilities .section-description {
+  color: #e8f5e8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Section 1: Basic Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px 16px 0 0;
+  text-align: center;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #8bc34a;
+}
+
+.info-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background: #8bc34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(139, 195, 74, 0.3);
+}
+
+.info-card:hover .info-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(139, 195, 74, 0.4);
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.info-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 0 0 15px 0;
+}
+
+.info-description {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Section 2: Facilities Grid */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.facility-category {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.category-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0 0 30px 0;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #8bc34a;
+}
+
+.facility-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.facility-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.facility-item:hover {
+  transform: translateX(5px);
+  border-color: #8bc34a;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.facility-icon {
+  width: 60px;
+  height: 60px;
+  background: #8bc34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.facility-item:hover .facility-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(139, 195, 74, 0.3);
+}
+
+.facility-content h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.facility-content p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Section 3: Accessibility Grid */
+.accessibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.accessibility-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px 16px 0 0;
+  text-align: center;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.accessibility-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #8bc34a;
+}
+
+.accessibility-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background: #8bc34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(139, 195, 74, 0.3);
+}
+
+.accessibility-card:hover .accessibility-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(139, 195, 74, 0.4);
+}
+
+.accessibility-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.accessibility-card p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lawn-hero { height: 45vh; min-height: 280px; }
+  .lawn-hero-text h1 { font-size: 2.2rem; }
+  .lawn-hero-text { padding: 25px 35px; }
+  
+  .lawn-section { padding: 60px 0; }
+  .section-title { font-size: 2.2rem; }
+  
+  .info-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .facilities-grid { grid-template-columns: 1fr; gap: 30px; }
+  .accessibility-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+}
+
+@media (max-width: 768px) {
+  .lawn-hero { height: 40vh; min-height: 250px; }
+  .lawn-hero-text h1 { font-size: 1.8rem; }
+  .lawn-hero-text { padding: 20px 30px; }
+  
+  .lawn-section { padding: 50px 0; }
+  .section-title { font-size: 2rem; }
+  .section-description { font-size: 1rem; }
+  
+  .info-grid { grid-template-columns: 1fr; gap: 20px; }
+  .info-card { padding: 30px 25px; }
+  .info-icon { width: 70px; height: 70px; font-size: 2.2rem; }
+  
+  .facilities-grid { grid-template-columns: 1fr; gap: 25px; }
+  .facility-category { padding: 30px 25px; }
+  .facility-item { padding: 15px; gap: 15px; }
+  .facility-icon { width: 50px; height: 50px; font-size: 1.6rem; }
+  
+  .accessibility-grid { grid-template-columns: 1fr; gap: 20px; }
+  .accessibility-card { padding: 30px 25px; }
+  .accessibility-icon { width: 70px; height: 70px; font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+  .lawn-hero { height: 35vh; min-height: 200px; }
+  .lawn-hero-text h1 { font-size: 1.5rem; }
+  .lawn-hero-text { padding: 15px 20px; }
+  
+  .lawn-section { padding: 40px 0; }
+  .section-title { font-size: 1.8rem; }
+  .section-description { font-size: 0.95rem; }
+  
+  .info-card { padding: 25px 20px; }
+  .info-card h3 { font-size: 1.3rem; }
+  .info-value { font-size: 1.1rem; }
+  .info-description { font-size: 0.9rem; }
+  .info-icon { width: 60px; height: 60px; font-size: 2rem; }
+  
+  .facility-category { padding: 25px 20px; }
+  .category-title { font-size: 1.5rem; }
+  .facility-item { padding: 12px; gap: 12px; }
+  .facility-content h4 { font-size: 1.1rem; }
+  .facility-content p { font-size: 0.9rem; }
+  .facility-icon { width: 45px; height: 45px; font-size: 1.4rem; }
+  
+  .accessibility-card { padding: 25px 20px; }
+  .accessibility-card h3 { font-size: 1.3rem; }
+  .accessibility-card p { font-size: 0.9rem; }
+  .accessibility-icon { width: 60px; height: 60px; font-size: 2rem; }
+}

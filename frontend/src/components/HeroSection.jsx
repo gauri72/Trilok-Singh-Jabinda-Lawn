@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { FaArrowRight, FaPlay, FaStar, FaLeaf, FaCalendarAlt, FaUsers, FaAward, FaHeart } from 'react-icons/fa'
+import { FaArrowRight, FaArrowLeft, FaStar, FaLeaf, FaCalendarAlt, FaUsers, FaAward, FaHeart } from 'react-icons/fa'
 import '../styles/hero-section.css'
 
-export default function HeroSection() {
+export default function HeroSection({ onNavigate }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -12,30 +12,30 @@ export default function HeroSection() {
       title: "Your Perfect Event Venue Awaits",
       subtitle: "Perfect setting for weddings, parties, and celebrations. Book your dream event today.",
       image: "/images/hero/background-1.jpg",
-      cta: "BOOK NOW",
-      ctaSecondary: "VIEW GALLERY",
-      ctaLink: "#booking",
-      ctaSecondaryLink: "#lawn"
+      cta: "Explore Lawn Details",
+      ctaSecondary: "View Gallery",
+      ctaLink: "lawn",
+      ctaSecondaryLink: "gallery"
     },
     {
       id: 2,
       title: "Where Memories Come to Life",
       subtitle: "Experience elegance and nature at our premium venue. Creating special moments for every celebration.",
       image: "/images/hero/background-2.jpg",
-      cta: "OUR SERVICES",
-      ctaSecondary: "CONTACT US",
-      ctaLink: "#about",
-      ctaSecondaryLink: "#contact"
+      cta: "About Us",
+      ctaSecondary: "Contact Us",
+      ctaLink: "about",
+      ctaSecondaryLink: "contact"
     },
     {
       id: 3,
       title: "Where Dreams Come to Life",
       subtitle: "Transform your special day into an unforgettable experience. Our beautifully maintained lawn and professional services ensure perfection.",
       image: "/images/hero/background-3.jpg",
-      cta: "GET QUOTE",
-      ctaSecondary: "CALL NOW",
-      ctaLink: "#contact",
-      ctaSecondaryLink: "#contact"
+      cta: "Contact Us",
+      ctaSecondary: "View Gallery",
+      ctaLink: "contact",
+      ctaSecondaryLink: "gallery"
     }
   ]
 
@@ -90,13 +90,9 @@ export default function HeroSection() {
   }
 
   const handleCTAClick = (link) => {
-    if (link.startsWith('#')) {
-      const element = document.querySelector(link)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    } else if (link.startsWith('tel:')) {
-      window.location.href = link
+    if (!link) return
+    if (onNavigate) {
+      onNavigate(link)
     }
   }
 
@@ -147,18 +143,18 @@ export default function HeroSection() {
             {/* Buttons */}
             <div className={`hero-buttons ${isVisible ? 'animate-in' : ''}`}>
               <button 
-                className="hero-btn primary"
+                className="ls-cta hero-cta"
                 onClick={() => handleCTAClick(slides[currentSlide].ctaLink)}
               >
                 {slides[currentSlide].cta}
                 <FaArrowRight className="btn-icon" />
               </button>
               <button 
-                className="hero-btn secondary"
+                className="ls-cta hero-cta outline"
                 onClick={() => handleCTAClick(slides[currentSlide].ctaSecondaryLink)}
               >
                 {slides[currentSlide].ctaSecondary}
-                <FaPlay className="btn-icon" />
+                <FaArrowRight className="btn-icon" />
               </button>
             </div>
 
@@ -210,10 +206,10 @@ export default function HeroSection() {
 
       {/* Navigation Controls */}
       <div className="hero-navigation">
-        <button className="nav-btn prev" onClick={prevSlide}>
-          <FaArrowRight />
+        <button className="nav-btn prev" onClick={prevSlide} aria-label="Previous slide">
+          <FaArrowLeft />
         </button>
-        <button className="nav-btn next" onClick={nextSlide}>
+        <button className="nav-btn next" onClick={nextSlide} aria-label="Next slide">
           <FaArrowRight />
         </button>
       </div>

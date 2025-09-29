@@ -1,0 +1,137 @@
+/* Working Process Section */
+.process-section {
+  position: relative;
+  background: #f8f9fa; /* fallback */
+  background-image: url('/images/services/background.jpg'); /* match Our Services bg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0; /* match Why Choose Us spacing */
+  overflow: hidden;
+}
+
+.process-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.35); /* subtle dark overlay for readability */
+  z-index: 1;
+}
+
+.process-section .container { position: relative; z-index: 2; }
+
+.process-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.process-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff; /* light label on dark bg */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.9rem;
+  background: transparent; /* remove background */
+  padding: 0; /* remove pill spacing */
+  border-radius: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.process-title {
+  font-size: 2.8rem; /* align with Why Choose Us */
+  font-weight: 800;
+  color: #ffffff;
+  margin: 6px 0 0 0;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+}
+
+.process-arrows { display: none; }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px; /* wider desktop spacing */
+  align-items: stretch;
+}
+
+.process-card {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.process-circle {
+  width: 340px; /* larger desktop circles */
+  height: 340px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 0 0 10px #e5e7eb, inset 0 0 0 24px #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.process-card:hover .process-circle {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.10), inset 0 0 0 10px #8bc34a, inset 0 0 0 24px #f3f4f6;
+}
+
+.process-icon {
+  font-size: 64px; /* bigger icon for desktop */
+  color: #374151;
+}
+
+.process-step-title {
+  margin: 0 0 8px 0;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 1.25rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.process-text {
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+}
+
+.process-scrolltop {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #8bc34a;
+  color: #fff;
+  border: none;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .process-section { padding: 60px 0; }
+  .process-title { font-size: 2.4rem; }
+  .process-grid { gap: 28px; }
+  .process-circle { width: 280px; height: 280px; }
+  .process-icon { font-size: 56px; }
+}
+
+@media (max-width: 768px) {
+  .process-section { padding: 60px 0; }
+  .process-title { font-size: 2rem; }
+  .process-grid { grid-template-columns: 1fr; gap: 24px; }
+  .process-circle { width: 280px; height: 280px; margin: 0 auto 16px auto; }
+}
+
+@media (max-width: 480px) {
+  .process-title { font-size: 1.7rem; }
+  .process-circle { width: 240px; height: 240px; }
+}
+
+

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { FaLeaf, FaSearch, FaPhoneAlt, FaClock, FaMapMarkerAlt, FaTimes } from 'react-icons/fa'
+import { FaLeaf, FaPhoneAlt, FaClock, FaMapMarkerAlt, FaTimes } from 'react-icons/fa'
 import '../styles/landshaper-navbar.css'
 
 const LINKS = [
   { name: 'Home', href: '#', page: 'home' },
-  { name: 'About Us', href: '#about', page: 'home' },
-  { name: 'Lawn', href: '#lawn', page: 'home' },
+  { name: 'About Us', href: '#about', page: 'about' },
+  { name: 'Lawn Details', href: '#lawn', page: 'lawn' },
   { name: 'Gallery', href: '#gallery', page: 'gallery' },
   { name: 'Contact Us', href: '#contact', page: 'contact' },
 ]
@@ -35,11 +35,6 @@ export default function LandshaperNavbar({ onNavigate }) {
     }
   }
 
-  const handleSearch = (e) => {
-    e.preventDefault()
-    // Add search functionality here
-    console.log('Search functionality to be implemented')
-  }
 
   return (
     <header className={`ls-root ${scrolled ? 'ls-scrolled' : ''}`}>
@@ -97,18 +92,8 @@ export default function LandshaperNavbar({ onNavigate }) {
           </ul>
 
           <div className="ls-actions">
-            <form className="ls-searchbox" onSubmit={handleSearch}>
-              <input 
-                placeholder="Search Here" 
-                aria-label="Search" 
-                type="search"
-              />
-              <button className="ls-searchbtn" aria-label="Search" type="submit">
-                <FaSearch size={20} />
-              </button>
-            </form>
-            <a href="#lawn" className="ls-cta" onClick={() => handleLinkClick('Lawn')}>
-              Explore Lawn
+            <a href="#lawn" className="ls-cta" onClick={() => handleLinkClick('Lawn Details', 'lawn')}>
+              Explore Lawn Details
             </a>
           </div>
         </div>
@@ -155,9 +140,9 @@ export default function LandshaperNavbar({ onNavigate }) {
         <a 
           href="#lawn" 
           className="ls-m-cta" 
-          onClick={() => handleLinkClick('Lawn')}
+          onClick={() => handleLinkClick('Lawn Details', 'lawn')}
         >
-          Explore Lawn
+          Explore Lawn Details
         </a>
       </div>
     </header>
