@@ -16,15 +16,15 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'gallery':
-        return <Gallery />
+        return <Gallery onNavigate={handleNavigation} currentPage={currentPage} />
       case 'contact':
-        return <ContactPage />
+        return <ContactPage onNavigate={handleNavigation} currentPage={currentPage} />
       case 'about':
         return <AboutUsPage onNavigate={handleNavigation} currentPage={currentPage} />
       case 'lawn':
-        return <LawnPage />
+        return <LawnPage onNavigate={handleNavigation} currentPage={currentPage} />
       default:
-        return <HomePage onNavigate={handleNavigation} />
+        return <HomePage onNavigate={handleNavigation} currentPage={currentPage} />
     }
   }
 

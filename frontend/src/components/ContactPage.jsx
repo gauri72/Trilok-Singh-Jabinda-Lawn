@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import LandshaperNavbar from './LandshaperNavbar'
+import Footer from './Footer'
 import '../styles/home-page.css'
 
-export default function ContactPage() {
+export default function ContactPage({ onNavigate, currentPage }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -99,6 +101,7 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
+      <LandshaperNavbar onNavigate={onNavigate} currentPage={currentPage} />
       {/* Hero Banner */}
       <section className="contact-hero">
         <div className="contact-hero-content">
@@ -257,6 +260,8 @@ export default function ContactPage() {
           />
         </div>
       </section>
+      
+      <Footer />
     </div>
   )
 }

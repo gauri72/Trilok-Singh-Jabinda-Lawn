@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { FaChevronLeft, FaChevronRight, FaHome, FaChevronRight as FaChevronRightSmall, FaLink, FaExpand } from 'react-icons/fa'
+import LandshaperNavbar from './LandshaperNavbar'
+import Footer from './Footer'
 import '../styles/gallery.css'
 
-export default function Gallery() {
+export default function Gallery({ onNavigate, currentPage: activePage }) {
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedImage, setSelectedImage] = useState(null)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
@@ -183,6 +185,7 @@ export default function Gallery() {
 
   return (
     <div className="gallery-page">
+      <LandshaperNavbar onNavigate={onNavigate} currentPage={activePage} />
       {/* Hero Banner */}
       <section className="gallery-hero">
         <div className="gallery-hero-content">
@@ -293,6 +296,8 @@ export default function Gallery() {
           </div>
         </div>
       )}
+      
+      <Footer />
     </div>
   )
 }

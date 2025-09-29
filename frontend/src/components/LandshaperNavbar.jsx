@@ -22,6 +22,27 @@ export default function LandshaperNavbar({ onNavigate, currentPage }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Dynamically expose header height via CSS variable for responsive offsetting
+  useEffect(() => {
+    const updateHeaderHeightVar = () => {
+      const headerEl = document.querySelector('.ls-root')
+      const height = headerEl ? headerEl.offsetHeight : 0
+      document.documentElement.style.setProperty('--ls-header-height', height + 'px')
+    }
+    updateHeaderHeightVar()
+    const onResize = () => updateHeaderHeightVar()
+    window.addEventListener('resize', onResize, { passive: true })
+    const obs = new MutationObserver(updateHeaderHeightVar)
+    const headerEl = document.querySelector('.ls-root')
+    if (headerEl) {
+      obs.observe(headerEl, { attributes: true, childList: true, subtree: true })
+    }
+    return () => {
+      window.removeEventListener('resize', onResize)
+      obs.disconnect()
+    }
+  }, [])
+
   useEffect(() => { 
     document.body.style.overflow = open ? 'hidden' : '' 
     return () => { document.body.style.overflow = '' }
