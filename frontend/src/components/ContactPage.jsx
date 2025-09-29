@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
-import '../styles/contact.css'
+import '../styles/home-page.css'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
