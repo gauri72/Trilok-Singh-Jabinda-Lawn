@@ -24,11 +24,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 're
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md'
 
 // Import CSS files
-import '../styles/hero-section.css'
-import '../styles/our-services.css'
-import '../styles/why-choose-us.css'
-import '../styles/testimonials.css'
-import '../styles/contact.css'
+import '../styles/home-page.css'
 import '../styles/landshaper-navbar.css'
 import '../styles/footer.css'
 
