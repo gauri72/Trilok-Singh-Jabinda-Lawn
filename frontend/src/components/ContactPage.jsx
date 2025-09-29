@@ -3,6 +3,8 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
 import LandshaperNavbar from './LandshaperNavbar'
 import Footer from './Footer'
 import '../styles/home-page.css'
+import '../styles/about-us.css'
+import '../styles/contact-page.css'
 
 export default function ContactPage({ onNavigate, currentPage }) {
   const [formData, setFormData] = useState({
@@ -76,15 +78,24 @@ export default function ContactPage({ onNavigate, currentPage }) {
     
     setIsSubmitting(true)
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 10000)
+
+      const composedMessage = `${formData.subject ? `[${formData.subject}] ` : ''}${formData.message}`
+
       const response = await fetch('http://localhost:8000/api/contact/submit/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
           phoneNumber: formData.phoneNumber,
-          message: `${formData.subject ? `[${formData.subject}] ` : ''}${formData.message}${formData.email ? `\n\nEmail: ${formData.email}` : ''}`,
-        })
+          message: composedMessage,
+        }),
+        signal: controller.signal,
       })
+
+      clearTimeout(timeoutId)
+
       const result = await response.json()
       if (response.ok && result.success) {
         setSubmitStatus({ type: 'success', message: result.message })
@@ -92,8 +103,18 @@ export default function ContactPage({ onNavigate, currentPage }) {
       } else {
         setSubmitStatus({ type: 'error', message: result.message || 'An error occurred. Please try again.' })
       }
-    } catch (err) {
-      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' })
+    } catch (error) {
+      let errorMessage = 'Network error. Please check your connection and try again.'
+      if (error.name === 'AbortError') {
+        errorMessage = 'Request timeout. Please try again.'
+      } else if (error.name === 'TypeError' && error.message && error.message.includes('fetch')) {
+        errorMessage = 'Unable to connect to server. Please check if the backend is running.'
+      } else if (error.name === 'TypeError' && error.message && error.message.includes('Failed to fetch')) {
+        errorMessage = 'Connection failed. Please check your internet connection.'
+      } else if (error.message && error.message.includes('CORS')) {
+        errorMessage = 'CORS error. Please check server configuration.'
+      }
+      setSubmitStatus({ type: 'error', message: errorMessage })
     } finally {
       setIsSubmitting(false)
     }
@@ -102,10 +123,10 @@ export default function ContactPage({ onNavigate, currentPage }) {
   return (
     <div className="contact-page">
       <LandshaperNavbar onNavigate={onNavigate} currentPage={currentPage} />
-      {/* Hero Banner */}
-      <section className="contact-hero">
-        <div className="contact-hero-content">
-          <div className="contact-hero-text">
+      {/* Hero Banner (match About Us hero) */}
+      <section className="about-hero">
+        <div className="about-hero-content">
+          <div className="about-hero-text">
             <h1>Contact Us</h1>
           </div>
         </div>
@@ -124,122 +145,54 @@ export default function ContactPage({ onNavigate, currentPage }) {
         </div>
       </section>
 
-      {/* Contact Information & Form Section */}
-      <section className="contact-info-section">
-        <div className="container contact-info-grid">
-          <div className="info-card">
-            <h2 className="info-title">Contact Information</h2>
-            <div className="info-item">
-              <div className="info-icon"><FaMapMarkerAlt /></div>
-              <div className="info-content">
-                <div className="info-label">Office Location:</div>
-                <div className="info-text">Gut No. 26, Shahnoorwadi, Chh. Sambhajinagar</div>
-                <div className="info-text">431005, Maharashtra, India</div>
-              </div>
-            </div>
-            <div className="info-item">
-              <div className="info-icon"><FaEnvelope /></div>
-              <div className="info-content">
-                <div className="info-label">Email Us:</div>
-                <div className="info-text">triloksinghjabindalawn@gmail.com</div>
-              </div>
-            </div>
-            <div className="info-item">
-              <div className="info-icon"><FaPhoneAlt /></div>
-              <div className="info-content">
-                <div className="info-label">Call For Help:</div>
-                <div className="info-text">+91 9975334445</div>
-              </div>
-            </div>
+      {/* Contact Information & Form Section (v3) */}
+      <section className="contact-v3">
+        <div className="contact-v3-wrap">
+          <div className="contact-v3-info">
+            <h2 className="contact-v3-title">We’d love to hear from you</h2>
+            <p className="contact-v3-sub">Our team will get back within 1 business day.</p>
+            <ul className="contact-v3-list">
+              <li>
+                <span className="contact-v3-icon"><FaMapMarkerAlt /></span>
+                <div>
+                  <strong>Address</strong>
+                  <span>Gut No. 26, Shahnoorwadi, Chh. Sambhajinagar, 431005</span>
+                </div>
+              </li>
+              <li>
+                <span className="contact-v3-icon"><FaEnvelope /></span>
+                <div>
+                  <strong>Email</strong>
+                  <span>triloksinghjabindalawn@gmail.com</span>
+                </div>
+              </li>
+              <li>
+                <span className="contact-v3-icon"><FaPhoneAlt /></span>
+                <div>
+                  <strong>Phone</strong>
+                  <span>+91 9975334445</span>
+                </div>
+              </li>
+            </ul>
           </div>
-
-          <div className="message-card">
-            <h2 className="message-title">Send us a Message</h2>
-            <form className="message-form" onSubmit={handleSubmit}>
+          <div className="contact-v3-form">
+            <h3 className="contact-v3-form-title">Send us a message</h3>
+            <form onSubmit={handleSubmit} className="contact-v3-fields">
               {submitStatus && (
                 <div className={`status-message ${submitStatus.type}`}>{submitStatus.message}</div>
               )}
-              <div className="form-row">
-                <div className="form-group">
-                  <input 
-                    name="name" 
-                    value={formData.name} 
-                    onChange={handleChange} 
-                    placeholder="Your Name" 
-                    required 
-                    className={`form-input ${fieldErrors.name ? 'error' : ''}`}
-                    disabled={isSubmitting}
-                  />
-                  {fieldErrors.name && (
-                    <span className="field-error">{fieldErrors.name}</span>
-                  )}
-                </div>
-                <div className="form-group">
-                  <input 
-                    name="email" 
-                    type="email" 
-                    value={formData.email} 
-                    onChange={handleChange} 
-                    placeholder="Your Email" 
-                    className={`form-input ${fieldErrors.email ? 'error' : ''}`}
-                    disabled={isSubmitting}
-                  />
-                  {fieldErrors.email && (
-                    <span className="field-error">{fieldErrors.email}</span>
-                  )}
-                </div>
+              <div className="contact-v3-row">
+                <input name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} disabled={isSubmitting} required className={`contact-v3-input ${fieldErrors.name ? 'error' : ''}`} />
+                <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} disabled={isSubmitting} className={`contact-v3-input ${fieldErrors.email ? 'error' : ''}`} />
               </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <input 
-                    name="phoneNumber" 
-                    value={formData.phoneNumber} 
-                    onChange={handleChange} 
-                    placeholder="Phone Number" 
-                    required 
-                    className={`form-input ${fieldErrors.phoneNumber ? 'error' : ''}`}
-                    disabled={isSubmitting}
-                  />
-                  {fieldErrors.phoneNumber && (
-                    <span className="field-error">{fieldErrors.phoneNumber}</span>
-                  )}
-                </div>
-                <div className="form-group">
-                  <input 
-                    name="subject" 
-                    value={formData.subject} 
-                    onChange={handleChange} 
-                    placeholder="Subject" 
-                    className="form-input"
-                    disabled={isSubmitting}
-                  />
-                </div>
+              <div className="contact-v3-row">
+                <input name="phoneNumber" placeholder="Phone" value={formData.phoneNumber} onChange={handleChange} disabled={isSubmitting} required className={`contact-v3-input ${fieldErrors.phoneNumber ? 'error' : ''}`} />
+                <input name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} disabled={isSubmitting} className="contact-v3-input" />
               </div>
-              <div className="form-group">
-                <textarea 
-                  name="message" 
-                  rows="6" 
-                  value={formData.message} 
-                  onChange={handleChange} 
-                  placeholder="Message" 
-                  required 
-                  className={`form-textarea ${fieldErrors.message ? 'error' : ''}`}
-                  disabled={isSubmitting}
-                />
-                {fieldErrors.message && (
-                  <span className="field-error">{fieldErrors.message}</span>
-                )}
-                <div className="character-count">
-                  {formData.message.length}/1000 characters
-                </div>
+              <textarea name="message" rows="6" placeholder="Message" value={formData.message} onChange={handleChange} disabled={isSubmitting} required className={`contact-v3-textarea ${fieldErrors.message ? 'error' : ''}`} />
+              <div className="contact-v3-actions">
+                <button type="submit" className="contact-v3-submit" disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Submit Now'}</button>
               </div>
-              <button 
-                type="submit" 
-                className="submit-now" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit Now'}
-              </button>
             </form>
           </div>
         </div>
